@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+      content="Our programs: Leadership and Civic Engagement, Entrepreneurship and Economic Empowerment, Education and Skills Development, Youth Advocacy and Policy Influence, and Community Resilience and Social Change." />
+    <title>Programs | YDNEA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="programs" class="programs-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="navbar-fixed">
+      <nav class="navbar-container">
+        <a href="index.html" class="logo"><span
+            class="logo-icon">Y</span>YDNEA</a>
+        <button class="hamburger" id="hamburger" aria-expanded="false"
+          aria-controls="navMenu"
+          aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-item"
+              data-page="home">Home</a></li>
+          <li><a href="about.html" class="nav-item"
+              data-page="about">About</a></li>
+          <li><a href="programs.html" class="nav-item active"
+              data-page="programs">Programs</a></li>
+          <li><a href="involved.html" class="nav-item" data-page="involved">Get
+              Involved</a></li>
+          <li><a href="resources.html" class="nav-item"
+              data-page="resources">Resources</a></li>
+          <li><a href="publications.html" class="nav-item"
+              data-page="publications">Publications</a></li>
+          <li><a href="fellowship.html" class="nav-item"
+              data-page="fellowship">Fellowship</a></li>
+          <li><a href="contact.html" class="nav-item"
+              data-page="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-full programs-hero">
+        <div class="section-container programs-hero-grid">
+          <div>
+            <span class="badge">OUR PROGRAMS</span>
+            <h1 class="programs-hero-title reveal">Five Strategic Program Areas
+              for Youth Transformation</h1>
+            <p class="lead reveal">We equip young people with the skills,
+              knowledge, opportunities, and networks they need to transform
+              their dreams into real achievements.</p>
+            <div class="programs-hero-actions reveal">
+              <a href="#program-portfolio" class="cta-button">Explore
+                Programs</a>
+              <a href="contact.html" class="cta-button secondary">Request
+                Program Support</a>
+            </div>
+          </div>
+
+          <div class="programs-hero-panel reveal"
+            aria-label="Program performance highlights">
+            <article>
+              <span class="programs-kicker">Active Tracks</span>
+              <h3>5 Priority Program Areas</h3>
+            </article>
+            <article>
+              <span class="programs-kicker">Regional Reach</span>
+              <h3>East African Community Focus</h3>
+            </article>
+            <article>
+              <span class="programs-kicker">Approach</span>
+              <h3>Participatory, Youth-Centered Design</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="programs-quicknav">
+        <div class="section-container">
+          <nav class="programs-quicknav-list" aria-label="Programs quick links">
+            <a href="#program-portfolio">Portfolio</a>
+            <a href="#delivery-model">Our Approach</a>
+            <a href="#program-outcomes">Regional Focus</a>
+            <a href="#program-inquiry">Program Inquiry</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="programs-full" id="program-portfolio">
+        <div class="programs-inner">
+          <div class="section-header-center">
+            <span class="section-badge">Program Areas</span>
+            <h2 class="programs-section-title">Current Initiatives</h2>
+            <p class="section-subtitle">Select a program area to focus on youth
+              priorities and opportunities</p>
+          </div>
+
+          <article id="program-featured" class="program-featured-card reveal"
+            aria-live="polite">
+            <div class="program-featured-copy">
+              <span class="programs-kicker">Featured Program</span>
+              <h3>Loading featured program...</h3>
+              <p>Program details will appear here.</p>
+            </div>
+          </article>
+
+          <div class="program-toolbar reveal">
+            <label for="program-search" class="program-search-label">Search
+              programs</label>
+            <input id="program-search" class="program-search-input"
+              type="search" placeholder="Search by title or category..." />
+          </div>
+
+          <div class="program-filters reveal" role="tablist"
+            aria-label="Program filters">
+            <button class="program-filter active" data-program-filter="all">All
+              Programs</button>
+            <button class="program-filter"
+              data-program-filter="education">Education</button>
+            <button class="program-filter"
+              data-program-filter="leadership">Leadership</button>
+            <button class="program-filter"
+              data-program-filter="entrepreneurship">Entrepreneurship</button>
+            <button class="program-filter"
+              data-program-filter="advocacy">Advocacy</button>
+            <button class="program-filter"
+              data-program-filter="resilience">Resilience</button>
+          </div>
+
+          <p class="program-count" id="program-count" aria-live="polite"></p>
+          <div id="programs-grid" class="programs-grid"></div>
+        </div>
+      </section>
+
+      <section class="about-full" id="delivery-model">
+        <div class="section-container">
+          <div class="section-header text-center">
+            <h2>Our Approach</h2>
+            <p class="section-subtitle">A participatory, youth-centered
+              approach that places young people at the heart of decision-making</p>
+          </div>
+
+          <div class="program-details-grid">
+            <article class="program-detail-card reveal"><span
+                class="detail-icon">01</span><h3>Youth-Centered
+                Planning</h3><p>Young people identify priorities, opportunities,
+                and real local challenges.</p></article>
+            <article class="program-detail-card reveal"><span
+                class="detail-icon">02</span><h3>Co-Design With
+                Partners</h3><p>Grassroots organizations, governments,
+                development partners, and the private sector co-create
+                interventions.</p></article>
+            <article class="program-detail-card reveal"><span
+                class="detail-icon">03</span><h3>Implementation and
+                Mentorship</h3><p>Training, mentorship, and practical support
+                help youth turn ideas into action.</p></article>
+            <article class="program-detail-card reveal"><span
+                class="detail-icon">04</span><h3>Sustainable
+                Solutions</h3><p>We design impactful and sustainable solutions
+                that strengthen communities over time.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-full program-outcomes" id="program-outcomes">
+        <div class="section-container">
+          <div class="section-header text-center">
+            <h2 class="section-heading-white">Regional Focus Areas</h2>
+            <p class="section-subtitle">Our activities span the East African
+              Community and support resilient youth-led development</p>
+          </div>
+          <div class="impact-grid">
+            <article class="stat-card reveal">
+              <p class="stat-number" data-counter="6">0</p>
+              <p class="stat-label">EAC Countries</p>
+            </article>
+            <article class="stat-card reveal">
+              <p class="stat-number" data-counter="5">0</p>
+              <p class="stat-label">Program Areas</p>
+            </article>
+            <article class="stat-card reveal">
+              <p class="stat-number" data-counter="2025">0</p>
+              <p class="stat-label">Founded in December</p>
+            </article>
+            <article class="stat-card reveal">
+              <p class="stat-number" data-counter="5">0</p>
+              <p class="stat-label">Core Values</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="program-pathway" id="program-pathway">
+        <div class="section-container">
+          <div class="section-header text-center">
+            <h2>Program Areas at a Glance</h2>
+            <p class="section-subtitle">Our five areas work together to support
+              youth leadership, economic progress, and social change</p>
+          </div>
+
+          <div class="pathway-grid">
+            <article class="pathway-step reveal"><span>1</span><h3>Leadership &
+                Civic Engagement</h3><p>Equipping youth with leadership skills
+                for governance, decision-making, and community development.</p></article>
+            <article class="pathway-step reveal"><span>2</span><h3>Entrepreneurship
+                & Economic Empowerment</h3><p>Training, mentorship, and
+                resources to support business growth, employment, and financial
+                independence.</p></article>
+            <article class="pathway-step reveal"><span>3</span><h3>Education &
+                Skills Development</h3><p>Practical education, vocational
+                training, and digital skills for success in a modern economy.</p></article>
+            <article class="pathway-step reveal"><span>4</span><h3>Youth
+                Advocacy & Policy Influence</h3><p>Promoting youth-inclusive
+                policies through regional and national dialogue.</p></article>
+            <article class="pathway-step reveal"><span>5</span><h3>Community
+                Resilience & Social Change</h3><p>Supporting social cohesion,
+                mental health awareness, environmental sustainability, and
+                innovation.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-full program-inquiry-section" id="program-inquiry">
+        <div class="section-container">
+          <div class="section-header text-center">
+            <h2>Program Inquiry</h2>
+            <p class="section-subtitle">Request program details, partnership
+              discussions, or enrollment information.</p>
+          </div>
+          <form id="program-inquiry-form"
+            class="contact-form-wrapper program-inquiry-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group"><label for="program-inquiry-name">Full
+                  Name *</label><input id="program-inquiry-name" name="name"
+                  type="text" required placeholder="Your full name" /></div>
+              <div class="form-group"><label for="program-inquiry-email">Email
+                  *</label><input id="program-inquiry-email" name="email"
+                  type="email" required placeholder="you@example.com" /></div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="program-inquiry-track">Program Area *</label>
+                <select id="program-inquiry-track" name="track" required>
+                  <option value>Select a program area</option>
+                  <option value="Leadership & Civic Engagement">Leadership & Civic Engagement</option>
+                  <option value="Entrepreneurship & Economic Empowerment">Entrepreneurship & Economic Empowerment</option>
+                  <option value="Education & Skills Development">Education & Skills Development</option>
+                  <option value="Youth Advocacy & Policy Influence">Youth Advocacy & Policy Influence</option>
+                  <option value="Community Resilience & Social Change">Community Resilience & Social Change</option>
+                </select>
+              </div>
+              <div class="form-group"><label for="program-inquiry-role">I am a
+                  *</label><input id="program-inquiry-role" name="role"
+                  type="text" required
+                  placeholder="Student, partner, institution..." /></div>
+            </div>
+            <div class="form-group"><label for="program-inquiry-message">Message
+                *</label><textarea id="program-inquiry-message" name="message"
+                rows="5" required
+                placeholder="What support or details do you need?"></textarea></div>
+            <button class="cta-button" type="submit">Send Inquiry</button>
+            <p id="program-inquiry-status" class="form-status"
+              aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="cta-full">
+        <div class="section-container">
+          <h2>Ready to Join or Partner in a Program?</h2>
+          <p>Join our growing network and help empower the next generation to
+            Dare to Dream and Dare to Achieve.</p>
+          <div class="cta-buttons">
+            <a href="involved.html" class="cta-button">Get Involved</a>
+            <a href="contact.html" class="cta-button secondary">Contact Team</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="program-modal" class="program-modal" aria-hidden="true"
+      role="dialog" aria-modal="true" aria-labelledby="program-modal-title">
+      <div class="program-modal-backdrop" data-close-program-modal></div>
+      <div class="program-modal-panel">
+        <button class="program-modal-close" type="button"
+          aria-label="Close program details"
+          data-close-program-modal>&times;</button>
+        <span id="program-modal-tag" class="tag">Program</span>
+        <h3 id="program-modal-title">Program Title</h3>
+        <p id="program-modal-description"></p>
+        <div class="program-modal-actions">
+          <a href="#program-inquiry" class="cta-button"
+            data-close-program-modal>Inquire About This Program</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-full">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="footer-logo"><span
+                class="logo-icon">Y</span>YDNEA</a>
+            <p>Youth and Development Network in East Africa empowering young
+              people across the East African Community.</p>
+          </div>
+          <div class="footer-col"><h4>Quick Links</h4><ul><li><a
+                  href="about.html">About</a></li><li><a
+                  href="programs.html">Programs</a></li><li><a
+                  href="resources.html">Resources</a></li><li><a
+                  href="contact.html">Contact</a></li></ul></div>
+          <div class="footer-col"><h4>Our Work</h4><ul><li><a
+                  href="involved.html">Get Involved</a></li><li><a
+                  href="publications.html">Publications</a></li><li><a
+                  href="fellowship.html">Fellowship</a></li></ul></div>
+          <div class="footer-col"><h4>Connect</h4><ul><li><a
+                  href="contact.html">Partner With Us</a></li><li><a
+                  href="contact.html">Volunteer</a></li><li><a
+                  href="contact.html">Support Our Work</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; <span id="year"></span> YDNEA. All
+            rights reserved.</p><p>Dare to Dream, Dare to Achieve.</p></div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=20260324b"></script>
+  </body>
+</html>

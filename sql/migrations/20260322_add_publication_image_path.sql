@@ -1,0 +1,2 @@
+ALTER TABLE publications
+  ADD COLUMN IF NOT EXISTS image_path VARCHAR(255) NULL AFTER tag;

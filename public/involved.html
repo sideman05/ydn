@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get involved with YDNEA" />
+  <title>Get Involved | YDNEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="involved">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="navbar-fixed">
+    <nav class="navbar-container">
+      <a href="index.html" class="logo"><span class="logo-icon">Y</span>YDNEA</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-item" data-page="home">Home</a></li>
+        <li><a href="about.html" class="nav-item" data-page="about">About</a></li>
+        <li><a href="programs.html" class="nav-item" data-page="programs">Programs</a></li>
+        <li><a href="involved.html" class="nav-item active" data-page="involved">Get Involved</a></li>
+        <li><a href="resources.html" class="nav-item" data-page="resources">Resources</a></li>
+        <li><a href="publications.html" class="nav-item" data-page="publications">Publications</a></li>
+        <li><a href="fellowship.html" class="nav-item" data-page="fellowship">Fellowship</a></li>
+        <li><a href="contact.html" class="nav-item" data-page="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-full involved-hero">
+      <div class="section-container">
+        <div class="involved-hero-layout">
+          <div class="involved-hero-copy">
+            <span class="badge">Join The Movement</span>
+            <h1 class="reveal">Multiple Pathways to Create Youth-Centered Impact</h1>
+            <p class="lead reveal">Volunteer, partner, contribute resources, or become an active member supporting practical youth development initiatives.</p>
+            <a href="#involved-grid" class="cta-button reveal">See Opportunities -></a>
+          </div>
+          <div class="hero-image-placeholder reveal involved-hero-art">
+            <div class="involved-hero-overlay"></div>
+            <div class="involved-hero-metrics">
+              <article><strong>320+</strong><span>Active Volunteers</span></article>
+              <article><strong>120+</strong><span>Community Partners</span></article>
+              <article><strong>42</strong><span>Districts Supported</span></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="involvement-full involved-opportunities">
+      <div class="involvement-inner">
+        <div class="section-header-center">
+          <span class="section-badge">Get Involved</span>
+          <h2 class="section-heading">Current Engagement Opportunities</h2>
+          <p class="section-subtitle">Choose how you want to contribute to youth transformation</p>
+        </div>
+
+        <div class="involved-toolbar reveal">
+          <div class="involved-search-wrap">
+            <label for="involved-search" class="sr-only">Search opportunities</label>
+            <input id="involved-search" type="search" placeholder="Search opportunities by role or topic" />
+          </div>
+          <div class="involved-filters" role="group" aria-label="Filter opportunities">
+            <button type="button" class="involved-filter active" data-involved-filter="all">All</button>
+            <button type="button" class="involved-filter" data-involved-filter="volunteer">Volunteer</button>
+            <button type="button" class="involved-filter" data-involved-filter="partner">Partner</button>
+            <button type="button" class="involved-filter" data-involved-filter="support">Support</button>
+            <button type="button" class="involved-filter" data-involved-filter="member">Member</button>
+          </div>
+        </div>
+
+        <div class="involved-content-layout">
+          <aside class="involved-featured-rail reveal">
+            <p id="involved-count" class="involved-count">0 opportunities shown</p>
+            <article id="involved-featured" class="involved-featured-card"></article>
+          </aside>
+          <div id="involved-grid" class="involvement-grid involved-grid-pro reveal"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-full involvement-inquiry-section" id="involvement-inquiry">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>Submit Your Interest</h2>
+          <p class="section-subtitle">Tell us how you want to get involved and our team will follow up.</p>
+        </div>
+        <form id="involvement-inquiry-form" class="contact-form-wrapper" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="involvement-name">Full Name *</label>
+              <input id="involvement-name" name="name" type="text" required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="involvement-email">Email *</label>
+              <input id="involvement-email" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="involvement-phone">Phone (Optional)</label>
+              <input id="involvement-phone" name="phone" type="tel" placeholder="+255..." />
+            </div>
+            <div class="form-group">
+              <label for="involvement-area">Involvement Area *</label>
+              <select id="involvement-area" name="area" required>
+                <option value="">Select one</option>
+                <option value="Join as a Volunteer">Join as a Volunteer</option>
+                <option value="Partner With Us">Partner With Us</option>
+                <option value="Donate / Support Us">Donate / Support Us</option>
+                <option value="Become a Member">Become a Member</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="involvement-message">Message *</label>
+            <textarea id="involvement-message" name="message" rows="5" required placeholder="Share your interest and how you would like to contribute."></textarea>
+          </div>
+          <button class="cta-button" type="submit">Send Interest</button>
+          <p id="involvement-inquiry-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="resources-full">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>Why Your Involvement Matters</h2>
+          <p class="section-subtitle">Collective action helps us serve more young people effectively</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>Community Reach</h3><p>Your support helps us expand programs to underserved youth communities.</p></article>
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18h16M7 15l3-3 2 2 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="9" r="1.2" fill="currentColor"/></svg></span><h3>Scalable Impact</h3><p>Partnerships and contributions strengthen sustainability and long-term outcomes.</p></article>
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3.5 19a4.5 4.5 0 0 1 9 0M11.5 19a4.5 4.5 0 0 1 9 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>Collaborative Growth</h3><p>You become part of a network committed to practical and measurable change.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-full">
+      <div class="section-container">
+        <h2>Take the Next Step</h2>
+        <p>Connect with us and start your involvement journey today.</p>
+        <div class="cta-buttons"><a href="#involvement-inquiry" class="cta-button">Submit Interest</a><a href="programs.html" class="cta-button secondary">View Programs</a></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="involved-modal" class="involved-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="involved-modal-title">
+    <div class="involved-modal-backdrop" data-close-involved-modal></div>
+    <div class="involved-modal-panel">
+      <button class="involved-modal-close" type="button" aria-label="Close involvement details" data-close-involved-modal>&times;</button>
+      <span id="involved-modal-tag" class="tag">Get Involved</span>
+      <h3 id="involved-modal-title">Opportunity</h3>
+      <p id="involved-modal-description"></p>
+      <div class="involved-modal-actions">
+        <button id="involved-share-copy" type="button" class="cta-button secondary">Copy Link</button>
+        <a id="involved-modal-interest" href="#involvement-inquiry" class="cta-button" data-close-involved-modal>Express Interest</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-full"><div class="footer-container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="footer-logo"><span class="logo-icon">Y</span>YDNEA</a><p>Youth and Development Network in East Africa empowering young people across the East African Community.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Our Work</h4><ul><li><a href="involved.html">Get Involved</a></li><li><a href="publications.html">Publications</a></li><li><a href="fellowship.html">Fellowship</a></li></ul></div><div class="footer-col"><h4>Connect</h4><ul><li><a href="contact.html">Partner With Us</a></li><li><a href="contact.html">Volunteer</a></li><li><a href="contact.html">Support Our Work</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> YDNEA. All rights reserved.</p><p>Dare to Dream, Dare to Achieve.</p></div></div></footer>
+
+  <script src="assets/js/main.js?v=20260324b"></script>
+</body>
+</html>

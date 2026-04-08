@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Youth resources and stories" />
+  <title>Resources | YDNEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="resources">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="navbar-fixed">
+    <nav class="navbar-container">
+      <a href="index.html" class="logo"><span class="logo-icon">Y</span>YDNEA</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-item" data-page="home">Home</a></li>
+        <li><a href="about.html" class="nav-item" data-page="about">About</a></li>
+        <li><a href="programs.html" class="nav-item" data-page="programs">Programs</a></li>
+        <li><a href="involved.html" class="nav-item" data-page="involved">Get Involved</a></li>
+        <li><a href="resources.html" class="nav-item active" data-page="resources">Resources</a></li>
+        <li><a href="publications.html" class="nav-item" data-page="publications">Publications</a></li>
+        <li><a href="fellowship.html" class="nav-item" data-page="fellowship">Fellowship</a></li>
+        <li><a href="contact.html" class="nav-item" data-page="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-full resources-hero">
+      <div class="section-container">
+        <div class="resources-hero-layout">
+          <div class="resources-hero-copy">
+            <span class="badge">Knowledge Hub</span>
+            <h1 class="reveal">Resources That Inform, Inspire, and Equip Youth Action</h1>
+            <p class="lead reveal">Explore stories, updates, and practical content from our programs and partner communities.</p>
+            <a href="#resources-grid" class="cta-button reveal">Browse Resources -></a>
+          </div>
+          <div class="hero-image-placeholder reveal resources-hero-art">
+            <div class="resources-hero-glow"></div>
+            <div class="resources-hero-metrics">
+              <article>
+                <strong>120+</strong>
+                <span>Guides Shared</span>
+              </article>
+              <article>
+                <strong>52</strong>
+                <span>Field Stories</span>
+              </article>
+              <article>
+                <strong>24</strong>
+                <span>Monthly Updates</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-full resources-hub">
+      <div class="resources-inner">
+        <div class="section-header-center">
+          <span class="section-badge">Resources</span>
+          <h2 class="section-heading">Latest Content Library</h2>
+          <p class="section-subtitle">Search, filter, and open each resource for full details</p>
+        </div>
+
+        <div class="resources-toolbar reveal">
+          <div class="resource-search-wrap">
+            <label for="resource-search" class="sr-only">Search resources</label>
+            <input id="resource-search" type="search" placeholder="Search by title, topic, or keyword" />
+          </div>
+          <div class="resource-filters" role="group" aria-label="Filter resources">
+            <button type="button" class="resource-filter active" data-resource-filter="all">All</button>
+            <button type="button" class="resource-filter" data-resource-filter="news">News</button>
+            <button type="button" class="resource-filter" data-resource-filter="guides">Guides</button>
+            <button type="button" class="resource-filter" data-resource-filter="stories">Stories</button>
+          </div>
+        </div>
+
+        <div class="resources-content-layout">
+          <aside class="resources-featured-rail reveal">
+            <p id="resources-count" class="resources-count">0 resources shown</p>
+            <article id="resource-featured" class="resource-featured-card"></article>
+          </aside>
+          <div id="resources-grid" class="resources-grid resources-grid-pro reveal"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-full resources-categories-wrap">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>Resource Categories</h2>
+          <p class="section-subtitle">Quickly find the content that matches your interest</p>
+        </div>
+        <div class="categories-grid">
+          <article class="category-card reveal resource-category-card" data-resource-filter-target="news"><span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 6h11a3 3 0 0 1 3 3v9H8a3 3 0 0 1-3-3V6z" stroke="currentColor" stroke-width="1.8"/><path d="M8 10h8M8 13h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>News & Updates</h3><p>Announcements, milestones, and partnership highlights.</p></article>
+          <article class="category-card reveal resource-category-card" data-resource-filter-target="guides"><span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v14H7a3 3 0 0 0-3 3V6.5z" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 11h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>Guides</h3><p>Practical materials for youth leadership and employability growth.</p></article>
+          <article class="category-card reveal resource-category-card" data-resource-filter-target="stories"><span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 4.6L19 9l-3.5 3.4.9 4.8L12 15l-4.4 2.2.9-4.8L5 9l4.8-1.4L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><h3>Success Stories</h3><p>Real examples of transformation from our program participants.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-full resource-request-section" id="resource-request">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>Request a Resource Pack</h2>
+          <p class="section-subtitle">Tell us what you need and our team will share curated materials.</p>
+        </div>
+
+        <form id="resource-request-form" class="contact-form-wrapper resource-request-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="resource-request-name">Full Name *</label>
+              <input id="resource-request-name" name="name" type="text" required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="resource-request-email">Email *</label>
+              <input id="resource-request-email" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="resource-request-topic">Topic *</label>
+            <input id="resource-request-topic" name="topic" type="text" required placeholder="Leadership, employability, youth health..." />
+          </div>
+          <div class="form-group">
+            <label for="resource-request-message">Message *</label>
+            <textarea id="resource-request-message" name="message" rows="4" required placeholder="Describe what resources you need and how you will use them."></textarea>
+          </div>
+          <button class="cta-button" type="submit">Send Request</button>
+          <p id="resource-request-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="cta-full"><div class="section-container"><h2>Want More Program Insights?</h2><p>Contact us for detailed information, collaboration, or media inquiries.</p><div class="cta-buttons"><a href="contact.html" class="cta-button">Contact Team</a><a href="publications.html" class="cta-button secondary">View Publications</a></div></div></section>
+  </main>
+
+  <div id="resource-modal" class="resource-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="resource-modal-title">
+    <div class="resource-modal-backdrop" data-close-resource-modal></div>
+    <div class="resource-modal-panel">
+      <button class="resource-modal-close" type="button" aria-label="Close resource details" data-close-resource-modal>&times;</button>
+      <span id="resource-modal-tag" class="tag">Resource</span>
+      <h3 id="resource-modal-title">Resource Title</h3>
+      <p id="resource-modal-description"></p>
+      <div class="resource-modal-actions">
+        <button id="resource-share-copy" type="button" class="cta-button secondary">Copy Link</button>
+        <a href="#resource-request" class="cta-button" data-close-resource-modal>Request Similar</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-full"><div class="footer-container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="footer-logo"><span class="logo-icon">Y</span>YDNEA</a><p>Youth and Development Network in East Africa empowering young people across the East African Community.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Our Work</h4><ul><li><a href="involved.html">Get Involved</a></li><li><a href="publications.html">Publications</a></li><li><a href="fellowship.html">Fellowship</a></li></ul></div><div class="footer-col"><h4>Connect</h4><ul><li><a href="contact.html">Partner With Us</a></li><li><a href="contact.html">Volunteer</a></li><li><a href="contact.html">Support Our Work</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> YDNEA. All rights reserved.</p><p>Dare to Dream, Dare to Achieve.</p></div></div></footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

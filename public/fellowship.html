@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fellowship and youth leadership pathways" />
+  <title>Fellowship | YDNEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="fellowship">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="navbar-fixed">
+    <nav class="navbar-container">
+      <a href="index.html" class="logo"><span class="logo-icon">Y</span>YDNEA</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-item" data-page="home">Home</a></li>
+        <li><a href="about.html" class="nav-item" data-page="about">About</a></li>
+        <li><a href="programs.html" class="nav-item" data-page="programs">Programs</a></li>
+        <li><a href="involved.html" class="nav-item" data-page="involved">Get Involved</a></li>
+        <li><a href="resources.html" class="nav-item" data-page="resources">Resources</a></li>
+        <li><a href="publications.html" class="nav-item" data-page="publications">Publications</a></li>
+        <li><a href="fellowship.html" class="nav-item active" data-page="fellowship">Fellowship</a></li>
+        <li><a href="contact.html" class="nav-item" data-page="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="fellowship-page">
+    <section class="hero-full fellowship-hero">
+      <div class="section-container">
+        <div class="hero-content">
+          <span class="badge">Leadership Pathways</span>
+          <h1 class="reveal">Fellowship Program for Emerging Youth Leaders</h1>
+          <p class="lead reveal">Join a practical learning journey designed to build leadership, professional skills, and community impact through mentoring and hands-on projects.</p>
+          <a href="#fellowship-apply" class="cta-button reveal">Apply Now -></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-full fellowship-highlights">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>What You Will Get</h2>
+          <p class="section-subtitle">A complete experience built for growth, confidence, and real-world readiness.</p>
+        </div>
+        <div class="fellowship-benefits-grid">
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>Personalized Learning Plan</h3><p>Set clear development goals with structured support throughout the fellowship cycle.</p></article>
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M14.8 9.2l-2.1 4.9-4.9 2.1 2.1-4.9 4.9-2.1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><h3>Mentorship</h3><p>Receive guidance from experienced professionals and sector practitioners.</p></article>
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="7" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="currentColor" stroke-width="1.8"/><path d="M4 12h16" stroke="currentColor" stroke-width="1.8"/></svg></span><h3>Career Readiness</h3><p>Build practical communication, teamwork, and problem-solving skills for career progression.</p></article>
+          <article class="benefit-card reveal"><span class="ben-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>Community Impact Project</h3><p>Apply your learning through a project that responds to real community needs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fellowship-full fellowship-opportunities">
+      <div class="fellowship-inner">
+        <div class="section-header-center">
+          <span class="section-badge">Open Cohorts</span>
+          <h2 class="section-heading">Current Opportunities</h2>
+          <p class="section-subtitle">Choose a track aligned with your interests and goals.</p>
+        </div>
+        <div class="fellowship-filters" role="group" aria-label="Filter fellowship tracks">
+          <button class="fellowship-filter active" data-fellowship-filter="all" type="button">All</button>
+          <button class="fellowship-filter" data-fellowship-filter="leadership" type="button">Leadership</button>
+          <button class="fellowship-filter" data-fellowship-filter="education" type="button">Education</button>
+          <button class="fellowship-filter" data-fellowship-filter="health" type="button">Health</button>
+          <button class="fellowship-filter" data-fellowship-filter="entrepreneurship" type="button">Entrepreneurship</button>
+        </div>
+        <p id="fellowship-count" class="text-center text-small"></p>
+        <div id="fellowship-grid" class="fellowship-grid"></div>
+      </div>
+    </section>
+
+    <section class="about-full fellowship-timeline-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>Application Timeline</h2>
+          <p class="section-subtitle">A clear process from application to onboarding.</p>
+        </div>
+        <div class="fellowship-timeline">
+          <article class="timeline-item reveal"><span class="timeline-step">1</span><h3>Submit Application</h3><p>Complete the fellowship application form with your background and motivation.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-step">2</span><h3>Review and Shortlisting</h3><p>Our team reviews applications based on eligibility, commitment, and alignment.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-step">3</span><h3>Interview Stage</h3><p>Shortlisted candidates are invited to a brief conversation with the selection panel.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-step">4</span><h3>Onboarding</h3><p>Selected fellows receive orientation, mentor matching, and cohort kickoff details.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fellowship-apply-section" id="fellowship-apply">
+      <div class="section-container">
+        <div class="fellowship-apply-grid">
+          <aside class="fellowship-apply-info reveal">
+            <h2>Eligibility Snapshot</h2>
+            <ul>
+              <li>Age 18-35 and committed to youth-focused impact</li>
+              <li>Demonstrated initiative in community, school, or workplace settings</li>
+              <li>Availability for the full fellowship cycle and learning sessions</li>
+              <li>Willingness to collaborate, learn, and mentor peers</li>
+            </ul>
+            <div class="fellowship-note">
+              <h3>Need Help?</h3>
+              <p>Questions before applying? Email <a href="mailto:ydn.eastafrica@gmail.com">ydn.eastafrica@gmail.com</a>.</p>
+            </div>
+          </aside>
+          <section class="fellowship-apply-form-wrap reveal" aria-label="Fellowship application form">
+            <h2>Fellowship Application Form</h2>
+            <p>Fill in your details to apply for the next cohort.</p>
+            <form id="fellowship-apply-form" class="contact-form-wrapper fellowship-form" novalidate>
+              <div class="form-grid">
+                <div class="form-group"><label for="fellow-name">Full Name *</label><input id="fellow-name" name="name" type="text" required placeholder="Your full name" /></div>
+                <div class="form-group"><label for="fellow-email">Email Address *</label><input id="fellow-email" name="email" type="email" required placeholder="you@example.com" /></div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="fellow-phone">Phone Number *</label><input id="fellow-phone" name="phone" type="tel" required placeholder="+255 700 000 000" /></div>
+                <div class="form-group">
+                  <label for="fellow-track">Preferred Track *</label>
+                  <select id="fellow-track" name="track" required>
+                    <option value="">Select a track</option>
+                    <option value="Leadership and Governance">Leadership and Governance</option>
+                    <option value="Education and Skills">Education and Skills</option>
+                    <option value="Health and Wellbeing">Health and Wellbeing</option>
+                    <option value="Enterprise and Innovation">Enterprise and Innovation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="fellow-location">Location *</label><input id="fellow-location" name="location" type="text" required placeholder="City / Region" /></div>
+                <div class="form-group"><label for="fellow-availability">Availability *</label><input id="fellow-availability" name="availability" type="text" required placeholder="e.g. 6 hrs/week" /></div>
+              </div>
+              <div class="form-group"><label for="fellow-motivation">Why do you want to join this fellowship? *</label><textarea id="fellow-motivation" name="motivation" rows="7" minlength="30" required placeholder="Share your motivation, experience, and what you hope to contribute."></textarea></div>
+              <button class="cta-button" type="submit">Submit Application</button>
+              <p id="fellowship-form-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-full fellowship-faq-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <h2>Frequently Asked Questions</h2>
+          <p class="section-subtitle">Quick answers about selection, commitment, and participation.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <button class="faq-trigger" type="button" aria-expanded="false">Is this fellowship paid?</button>
+            <div class="faq-body"><p>Some tracks include a small stipend or project support. Details are shared in each cohort call.</p></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-trigger" type="button" aria-expanded="false">How long does the fellowship run?</button>
+            <div class="faq-body"><p>Most cohorts run for 3 to 6 months with scheduled sessions, mentorship, and project milestones.</p></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-trigger" type="button" aria-expanded="false">Can students and early-career professionals apply?</button>
+            <div class="faq-body"><p>Yes. We welcome students, graduates, and early-career professionals with strong motivation and commitment.</p></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-trigger" type="button" aria-expanded="false">When will I hear back after applying?</button>
+            <div class="faq-body"><p>Applicants are usually notified within 2 to 3 weeks after the application window closes.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-full"><div class="footer-container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="footer-logo"><span class="logo-icon">Y</span>YDNEA</a><p>Youth and Development Network in East Africa empowering young people across the East African Community.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Our Work</h4><ul><li><a href="involved.html">Get Involved</a></li><li><a href="publications.html">Publications</a></li><li><a href="fellowship.html">Fellowship</a></li></ul></div><div class="footer-col"><h4>Connect</h4><ul><li><a href="contact.html">Partner With Us</a></li><li><a href="contact.html">Volunteer</a></li><li><a href="contact.html">Support Our Work</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> YDNEA. All rights reserved.</p><p>Dare to Dream, Dare to Achieve.</p></div></div></footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
