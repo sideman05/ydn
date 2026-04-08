@@ -41,7 +41,7 @@ $entityMap = [
         'table' => 'publications',
         'pk' => 'id',
         'columns' => ['title', 'description', 'tag', 'image_path', 'sort_order'],
-        'readonly' => ['slug', 'created_at'],
+        'readonly' => ['created_at'],
         'default_order' => 'sort_order ASC, id DESC',
     ],
     'fellowships' => [
@@ -190,11 +190,6 @@ try {
         $entityName = (string)($_GET['entity'] ?? '');
         $entity = data_get_entity($entityMap, $entityName);
 
-        if ($entityName === 'publications') {
-            publications_ensure_image_column($pdo);
-            publications_prepare_slug_support($pdo);
-        }
-
         $columns = array_merge([$entity['pk']], $entity['columns'], $entity['readonly']);
         $selectColumns = implode(', ', array_map(static fn(string $col): string => "`{$col}`", $columns));
 
@@ -224,11 +219,6 @@ try {
         $inputValues = is_array($payload['values'] ?? null) ? $payload['values'] : [];
 
         $entity = data_get_entity($entityMap, $entityName);
-
-        if ($entityName === 'publications') {
-            publications_ensure_image_column($pdo);
-            publications_prepare_slug_support($pdo);
-        }
 
         if (($entity['read_only_table'] ?? false) === true) {
             admin_json([
@@ -278,10 +268,6 @@ try {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
 
-            if ($entityName === 'publications' && array_key_exists('title', $values)) {
-                publications_assign_slug_if_missing($pdo, $id, (string)$values['title']);
-            }
-
             admin_json([
                 'success' => true,
                 'message' => 'Record updated successfully.',
@@ -313,10 +299,6 @@ try {
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute($params);
-
-        if ($entityName === 'publications') {
-            publications_assign_slug_if_missing($pdo, (int)$pdo->lastInsertId(), (string)($values['title'] ?? 'publication'));
-        }
 
         admin_json([
             'success' => true,

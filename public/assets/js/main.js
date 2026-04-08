@@ -24,7 +24,6 @@ function resolveApiBase() {
 }
 
 const API_BASE = resolveApiBase();
-const PUBLIC_BASE = API_BASE.replace(/\/api$/, "/public");
 
 const qs = (selector) => document.querySelector(selector);
 let toastRoot = null;
@@ -86,7 +85,7 @@ const createFellowshipCardMarkup = ({ title, description, tag, category }) => `
   </article>
 `;
 
-const createPublicationCardMarkup = ({ id, slug, title, description, tag, image_path: imagePath }) => `
+const createPublicationCardMarkup = ({ id, title, description, tag, image_path: imagePath }) => `
   <article class="card reveal publication-card">
     <div class="publication-cover">
       ${
@@ -98,7 +97,7 @@ const createPublicationCardMarkup = ({ id, slug, title, description, tag, image_
     <span class="tag">${tag ?? "Publication"}</span>
     <h3>${title}</h3>
     <p>${description}</p>
-    <a class="link" href="${getPublicationUrl({ id, slug })}">Read More</a>
+    <a class="link" href="publication-post.html?id=${encodeURIComponent(String(id ?? ""))}">Read More</a>
   </article>
 `;
 
@@ -157,25 +156,7 @@ function normalizePublicationImagePath(imagePath) {
   const raw = String(imagePath || "").trim();
   if (!raw) return "";
   if (/^https?:\/\//i.test(raw)) return raw;
-  if (raw.startsWith("/")) return raw;
-  return `${PUBLIC_BASE}/${raw.replace(/^\.?\//, "")}`;
-}
-
-function getPublicationUrl({ id, slug }) {
-  const normalizedSlug = String(slug || "").trim();
-  if (normalizedSlug) {
-    return `${PUBLIC_BASE}/publication/${encodeURIComponent(normalizedSlug)}`;
-  }
-
-  return `${PUBLIC_BASE}/publication-post.html?id=${encodeURIComponent(String(id ?? ""))}`;
-}
-
-function getPublicationSlugFromPath() {
-  const match = window.location.pathname.match(/\/publication\/([^/?#]+)\/?$/i);
-  if (!match) return "";
-
-  const slug = decodeURIComponent(match[1] || "").trim();
-  return slug === "index.html" ? "" : slug;
+  return raw.startsWith("/") ? raw : `${raw}`;
 }
 
 function escapeHtml(value) {
@@ -212,7 +193,7 @@ function renderFeaturedPublication(item) {
       <span class="blog-chip">Featured</span>
       <h2>${item.title}</h2>
       <p>${item.description}</p>
-      <a href="${getPublicationUrl(item)}" class="link">Read Full Post</a>
+      <a href="publication-post.html?id=${encodeURIComponent(String(item.id || ""))}" class="link">Read Full Post</a>
     </div>
   `;
 }
@@ -221,7 +202,6 @@ async function setupPublicationPostPage() {
   if (document.body.dataset.page !== "publication-post") return;
 
   const params = new URLSearchParams(window.location.search);
-  const slug = String(params.get("slug") || getPublicationSlugFromPath()).trim();
   const id = Number(params.get("id") || "0");
 
   const titleEl = qs("#publication-post-title");
@@ -237,7 +217,7 @@ async function setupPublicationPostPage() {
 
   if (!titleEl || !tagEl || !dateEl || !imageEl || !bodyEl || !statusEl) return;
 
-  if (!slug && (!id || Number.isNaN(id))) {
+  if (!id || Number.isNaN(id)) {
     statusEl.textContent = "Invalid publication link.";
     return;
   }
@@ -245,11 +225,7 @@ async function setupPublicationPostPage() {
   statusEl.textContent = "Loading publication...";
 
   try {
-    const lookup = slug
-      ? `slug=${encodeURIComponent(slug)}`
-      : `id=${encodeURIComponent(String(id))}`;
-
-    const response = await fetch(`${API_BASE}/publications.php?${lookup}`, {
+    const response = await fetch(`${API_BASE}/publications.php?id=${encodeURIComponent(String(id))}`, {
       headers: { Accept: "application/json" },
     });
 
@@ -263,7 +239,6 @@ async function setupPublicationPostPage() {
     const imagePath = normalizePublicationImagePath(item.image_path);
     currentPublicationId = Number(item.id || 0);
     currentPublicationTitle = String(item.title || "Publication");
-    document.title = `${currentPublicationTitle} | YDNEA`;
 
     titleEl.textContent = item.title || "Untitled Publication";
     tagEl.textContent = item.tag || "Publication";
@@ -280,15 +255,7 @@ async function setupPublicationPostPage() {
 
     statusEl.textContent = "";
 
-    const canonicalPath = getPublicationUrl(item);
-    const canonicalUrl = new URL(canonicalPath, window.location.origin);
-    const currentUrl = new URL(window.location.href);
-
-    if (currentUrl.pathname !== canonicalUrl.pathname || currentUrl.search) {
-      window.history.replaceState({}, "", canonicalUrl.pathname);
-    }
-
-    const pageUrl = canonicalUrl.href;
+    const pageUrl = window.location.href;
     const shareText = `${currentPublicationTitle} - YDNEA`;
 
     if (shareWhatsAppBtn) {

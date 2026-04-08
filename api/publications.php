@@ -9,28 +9,42 @@ if (!in_array($method, ['GET', 'POST'], true)) {
     method_not_allowed(['GET', 'POST']);
 }
 
+function publications_has_image_column(PDO $pdo): bool
+{
+    $stmt = $pdo->query("SHOW COLUMNS FROM publications LIKE 'image_path'");
+    return (bool)$stmt->fetch();
+}
+
+function publications_ensure_image_column(PDO $pdo): void
+{
+    if (publications_has_image_column($pdo)) {
+        return;
+    }
+
+    try {
+        $pdo->exec("ALTER TABLE publications ADD COLUMN image_path VARCHAR(255) NULL AFTER tag");
+    } catch (Throwable $exception) {
+        // If another process already added the column, continue safely.
+        if (!publications_has_image_column($pdo)) {
+            throw $exception;
+        }
+    }
+}
+
 try {
     $pdo = get_db_connection();
-    publications_ensure_image_column($pdo);
-    publications_prepare_slug_support($pdo);
 
     if ($method === 'GET') {
+        $hasImageColumn = publications_has_image_column($pdo);
         $id = (int)($_GET['id'] ?? 0);
-        $slug = trim((string)($_GET['slug'] ?? ''));
 
-        if ($slug !== '' || $id > 0) {
-            $query = 'SELECT id, slug, title, description, tag, sort_order, image_path, created_at FROM publications';
+        if ($id > 0) {
+            $query = $hasImageColumn
+                ? 'SELECT id, title, description, tag, sort_order, image_path, created_at FROM publications WHERE id = :id LIMIT 1'
+                : 'SELECT id, title, description, tag, sort_order, NULL AS image_path, created_at FROM publications WHERE id = :id LIMIT 1';
 
-            if ($slug !== '') {
-                $query .= ' WHERE slug = :slug LIMIT 1';
-                $stmt = $pdo->prepare($query);
-                $stmt->execute([':slug' => $slug]);
-            } else {
-                $query .= ' WHERE id = :id LIMIT 1';
-                $stmt = $pdo->prepare($query);
-                $stmt->execute([':id' => $id]);
-            }
-
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([':id' => $id]);
             $item = $stmt->fetch();
 
             if (!$item) {
@@ -46,7 +60,10 @@ try {
             ]);
         }
 
-        $query = 'SELECT id, slug, title, description, tag, sort_order, image_path, created_at FROM publications ORDER BY sort_order ASC, id DESC';
+        $query = $hasImageColumn
+            ? 'SELECT id, title, description, tag, sort_order, image_path, created_at FROM publications ORDER BY sort_order ASC, id DESC'
+            : 'SELECT id, title, description, tag, sort_order, NULL AS image_path, created_at FROM publications ORDER BY sort_order ASC, id DESC';
+
         $stmt = $pdo->query($query);
         $data = $stmt->fetchAll();
 
@@ -146,15 +163,14 @@ try {
         ], 422);
     }
 
-    $slug = publications_generate_unique_slug($pdo, $title);
+    publications_ensure_image_column($pdo);
 
     $stmt = $pdo->prepare(
-        'INSERT INTO publications (title, slug, description, tag, sort_order, image_path) VALUES (:title, :slug, :description, :tag, :sort_order, :image_path)'
+        'INSERT INTO publications (title, description, tag, sort_order, image_path) VALUES (:title, :description, :tag, :sort_order, :image_path)'
     );
 
     $stmt->execute([
         ':title' => $title,
-        ':slug' => $slug,
         ':description' => $description,
         ':tag' => $tag,
         ':sort_order' => $sortOrder,
@@ -166,7 +182,6 @@ try {
         'message' => 'Publication uploaded successfully',
         'data' => [
             'id' => (int)$pdo->lastInsertId(),
-            'slug' => $slug,
             'title' => $title,
             'description' => $description,
             'tag' => $tag,

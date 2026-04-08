@@ -1,2 +1,0 @@
-ALTER TABLE publications
-  ADD COLUMN IF NOT EXISTS slug VARCHAR(191) NULL AFTER title;

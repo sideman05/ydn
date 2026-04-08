@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS resources (
 CREATE TABLE IF NOT EXISTS publications (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  slug VARCHAR(191) NOT NULL UNIQUE,
   description TEXT NOT NULL,
   tag VARCHAR(60) NOT NULL DEFAULT 'Publication',
   image_path VARCHAR(255) NULL,
@@ -154,11 +153,11 @@ INSERT INTO resources (title, description, tag, sort_order) VALUES
 ('News', 'Organization updates, policy moments, and announcements from the field.', 'Resource', 2),
 ('Success Stories', 'Real stories of youth transformation and measurable impact in communities.', 'Resource', 3);
 
-INSERT INTO publications (title, slug, description, tag, sort_order) VALUES
-('Annual Reports', 'annual-reports', 'Transparent reporting on outcomes, finances, and strategic milestones.', 'Publication', 1),
-('Policy Briefs', 'policy-briefs', 'Actionable recommendations for policymakers and development partners.', 'Publication', 2),
-('Research', 'research', 'Data-informed studies highlighting youth priorities and intervention results.', 'Publication', 3),
-('Data Privacy Policy', 'data-privacy-policy', 'How we collect, protect, and process personal data responsibly.', 'Publication', 4);
+INSERT INTO publications (title, description, tag, sort_order) VALUES
+('Annual Reports', 'Transparent reporting on outcomes, finances, and strategic milestones.', 'Publication', 1),
+('Policy Briefs', 'Actionable recommendations for policymakers and development partners.', 'Publication', 2),
+('Research', 'Data-informed studies highlighting youth priorities and intervention results.', 'Publication', 3),
+('Data Privacy Policy', 'How we collect, protect, and process personal data responsibly.', 'Publication', 4);
 
 INSERT INTO fellowships (title, description, tag, sort_order) VALUES
 ('Youth Leadership Fellowship', 'An intensive leadership journey for young changemakers driving community action.', 'Fellowship', 1),

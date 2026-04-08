@@ -16,8 +16,6 @@ admin_require_csrf();
 
 try {
     $pdo = get_db_connection();
-    publications_ensure_image_column($pdo);
-    publications_prepare_slug_support($pdo);
 
     $title = trim((string)($_POST['title'] ?? ''));
     $description = trim((string)($_POST['description'] ?? ''));
@@ -108,15 +106,12 @@ try {
         ], 422);
     }
 
-    $slug = publications_generate_unique_slug($pdo, $title);
-
     $stmt = $pdo->prepare(
-        'INSERT INTO publications (title, slug, description, tag, sort_order, image_path) VALUES (:title, :slug, :description, :tag, :sort_order, :image_path)'
+        'INSERT INTO publications (title, description, tag, sort_order, image_path) VALUES (:title, :description, :tag, :sort_order, :image_path)'
     );
 
     $stmt->execute([
         ':title' => $title,
-        ':slug' => $slug,
         ':description' => $description,
         ':tag' => $tag,
         ':sort_order' => $sortOrder,
@@ -128,7 +123,6 @@ try {
         'message' => 'Publication uploaded successfully.',
         'data' => [
             'id' => (int)$pdo->lastInsertId(),
-            'slug' => $slug,
             'title' => $title,
             'tag' => $tag,
             'image_path' => $imagePath,
